@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="urn:dita4publishers:doctypes:style2tagmap:rng:style2tagmap.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="urn:dita4publishers:doctypes:style2tagmap:sch:style2tagmap.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <style2tagmap 
   xmlns="urn:public:dita4publishers.org:namespaces:word2dita:style2tagmap">
   <title>Human Kinetics Book to  DITA XML Style Mapping</title>

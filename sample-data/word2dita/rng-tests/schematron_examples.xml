@@ -45,7 +45,7 @@
                       level="0"
                       structureType="mapTitle"
                       tagName="title">
-         <mapProperties format="bookmap" prologType="topicmeta" tagName="title"/>
+         <mapProperties format="bookmap_bad" prologType="topicmeta" tagName="title"/>
       </paragraphStyle>
     
       <paragraphStyle styleName="heading 1"
@@ -61,7 +61,7 @@
                           shortdescType="shortdesc"
                           prologType="prolog"
                           initialSectionType="foosection"
-                          format="concept"/>
+                          />
       </paragraphStyle>    
       <paragraphStyle styleName="heading 2"
                       structureType="topicTitle"
@@ -70,11 +70,30 @@
                       level="2">
          <topicrefProperties topicrefType="topicref"/>
          <topicProperties topicDoc="yes"
-                          topicType="concept"
-                          bodyType="conbody"
+                          topicType="concept_dif"
+                          bodyType="conbody_dif"
+                          abstractType="abstract_dif"
+                          shortdescType="shortdesc_dif"
+                          prologType="prolog_dif"
+                          initialSectionType="foosection_dif"
                           format="concept"
                           outputclass="mytopic"/>
       </paragraphStyle>    
+    
+    <paragraphStyle styleName="pn"
+      tagName="data"
+      baseClass=" topic/data "
+      containingTopic="root"
+      topicZone="prolog"
+      dataName="part-number"
+      putValueIn="content"/>
+    
+    
+    <paragraphStyle styleName="cn"
+      tagName="data"
+      baseClass=" topic/data "
+      containingTopic="roottopic"
+      topicZone="prolog"/>
     
     
       <paragraphStyle styleName="heading 3"
@@ -99,9 +118,10 @@
                           format="concept"/>
       </paragraphStyle>    
     
-      <paragraphStyle styleName="Normal" tagName="p" topicZone="body" level="1"/>
+      <style styleName="Normal" tagName="p" topicZone="body" level="1"/>
     
       <paragraphStyle styleName="DefaultParagraph Font"
+        styleId="DefaultParagraph Font"
                       tagName="ph"
                       topicZone="body"
                       level="1"/>
