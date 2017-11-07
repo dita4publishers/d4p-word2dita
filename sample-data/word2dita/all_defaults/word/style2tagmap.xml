@@ -63,7 +63,7 @@
                           abstractType="abstract"
                           shortdescType="shortdesc"
                           prologType="prolog"
-                          initialSectionType="foosection"
+                          initialSectionType="section"
                           format="concept"/>
       </paragraphStyle>    
       <paragraphStyle styleName="heading 2"
