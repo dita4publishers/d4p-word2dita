@@ -115,16 +115,16 @@
     <paragraphStyle styleName="section" structureType="section" tagName="p" topicZone="body"
       spectitle="#toColon"/>
 
-    <characterStyle styleName="Bold" tagName="b"/>
-    <characterStyle styleName="Italic" tagName="i"/>
-    <characterStyle styleName="BoldItalic" tagName="ph" outputclass="bold-italic"/>
-    <characterStyle styleName="Linethrough" tagName="linethrough"/>
-    <characterStyle styleName="Underline" tagName="u"/>
-    <characterStyle styleName="Subscript" tagName="sub"/>
-    <characterStyle styleName="Superscript" tagName="sup"/>
-    <characterStyle styleName="BoldUnderline" tagName="ph" outputclass="bold-underline"/>
-    <characterStyle styleName="BoldItalicUnderline" tagName="ph" outputclass="bold-italic-underline"/>
-    <characterStyle styleName="ItalicUnderline" tagName="ph" outputclass="italic-underline"/>
-
+    <characterStyle styleName="b" tagName="b"/>
+    <characterStyle styleName="i" tagName="i"/>
+    <characterStyle styleName="b-i" tagName="ph" outputclass="b-i"/>
+    <characterStyle styleName="linethrough" tagName="linethrough"/>
+    <characterStyle styleName="u" tagName="u"/>
+    <characterStyle styleName="sub" tagName="sub"/>
+    <characterStyle styleName="sup" tagName="sup"/>
+    <characterStyle styleName="b-i" tagName="ph" outputclass="b-i"/>
+    <characterStyle styleName="b-i-u" tagName="ph" outputclass="b-i-u"/>
+    <characterStyle styleName="i-u" tagName="ph" outputclass="i-u"/>
+    
   </styles>
 </style2tagmap>
