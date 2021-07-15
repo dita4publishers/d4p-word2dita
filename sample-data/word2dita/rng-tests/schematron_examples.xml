@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style2tagmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xmlns="urn:public:dita4publishers.org:namespaces:word2dita:style2tagmap"
-              xsi:schemaLocation="urn:public::dita4publishers.org:namespaces:word2dita:style2tagmap style2tagmap.xsd">
+<?xml-model href="urn:dita4publishers:doctypes:style2tagmap:rng:style2tagmap.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="urn:dita4publishers:doctypes:style2tagmap:sch:style2tagmap.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<style2tagmap 
+  xmlns="urn:public:dita4publishers.org:namespaces:word2dita:style2tagmap">
   <title>Default Word Styles to BookMap Style-to-Tag Map</title>
   <documentation xmlns:html="http://www.w3.org/1999/xhtml">
       <html:div xmlns="http://www.w3.org/1999/xhtml">
@@ -40,18 +41,18 @@
               doctype-system="reference.dtd"
               doctype-public="-//OASIS//DTD DITA Reference//EN"/>
 
-      <paragraphStyle styleName="Title"
+    <paragraphStyle styleName="Title"
                       level="0"
                       structureType="mapTitle"
                       tagName="title">
-         <mapProperties format="bookmap" prologType="topicmeta" tagName="title"/>
+         <mapProperties format="bookmap_bad" prologType="topicmeta" tagName="title"/>
       </paragraphStyle>
     
       <paragraphStyle styleName="heading 1"
                       structureType="topicTitle"
                       tagName="title"
                       level="1">
-         <mapProperties rootTopicrefType="topicgroup" format="map" maprefType="mapref"/>
+         <mapProperties rootTopicrefType="topicgroup" format="bookmap" maprefType="mapref"/>
          <topicrefProperties navtitleType="navtitle" topicrefType="chapter" chunk="to-content"/>
          <topicProperties topicDoc="yes"
                           topicType="concept"
@@ -60,7 +61,7 @@
                           shortdescType="shortdesc"
                           prologType="prolog"
                           initialSectionType="foosection"
-                          format="concept"/>
+                          />
       </paragraphStyle>    
       <paragraphStyle styleName="heading 2"
                       structureType="topicTitle"
@@ -69,11 +70,30 @@
                       level="2">
          <topicrefProperties topicrefType="topicref"/>
          <topicProperties topicDoc="yes"
-                          topicType="concept"
-                          bodyType="conbody"
+                          topicType="concept_dif"
+                          bodyType="conbody_dif"
+                          abstractType="abstract_dif"
+                          shortdescType="shortdesc_dif"
+                          prologType="prolog_dif"
+                          initialSectionType="foosection_dif"
                           format="concept"
                           outputclass="mytopic"/>
       </paragraphStyle>    
+    
+    <paragraphStyle styleName="pn"
+      tagName="data"
+      baseClass=" topic/data "
+      containingTopic="root"
+      topicZone="prolog"
+      dataName="part-number"
+      putValueIn="content"/>
+    
+    
+    <paragraphStyle styleName="cn"
+      tagName="data"
+      baseClass=" topic/data "
+      containingTopic="roottopic"
+      topicZone="prolog"/>
     
     
       <paragraphStyle styleName="heading 3"
@@ -98,9 +118,10 @@
                           format="concept"/>
       </paragraphStyle>    
     
-      <paragraphStyle styleName="Normal" tagName="p" topicZone="body" level="1"/>
+      <style styleName="Normal" tagName="p" topicZone="body" level="1"/>
     
       <paragraphStyle styleName="DefaultParagraph Font"
+        styleId="DefaultParagraph Font"
                       tagName="ph"
                       topicZone="body"
                       level="1"/>
@@ -219,7 +240,7 @@
                       topicZone="body"
                       spectitle="#toColon"/>
     
-      <characterStyle styleName="bold" tagName="b"/>
+      <characterStyle styleName="bold"  tagName="b"/>
     
   </styles>
 </style2tagmap>

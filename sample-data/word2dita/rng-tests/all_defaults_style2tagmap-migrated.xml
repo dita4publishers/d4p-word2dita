@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style2tagmap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xmlns="urn:public:dita4publishers.org:namespaces:word2dita:style2tagmap"
-              xsi:schemaLocation="urn:public::dita4publishers.org:namespaces:word2dita:style2tagmap style2tagmap.xsd">
+<?xml-model href="urn:dita4publishers:doctypes:style2tagmap:rng:style2tagmap.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="urn:dita4publishers:doctypes:style2tagmap:sch:style2tagmap.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<style2tagmap 
+  xmlns="urn:public:dita4publishers.org:namespaces:word2dita:style2tagmap">
   <title>Default Word Styles to BookMap Style-to-Tag Map</title>
   <documentation xmlns:html="http://www.w3.org/1999/xhtml">
       <html:div xmlns="http://www.w3.org/1999/xhtml">
@@ -24,21 +25,13 @@
     
       <output topicType="concept"
               bodyType="conbody"
+              abstractType="abstract"
+              shortdescType="shortdesc"
+              prologType="prolog"
+              initialSectionType="foosection"
               name="concept"
               doctype-system="concept.dtd"
               doctype-public="-//OASIS//DTD DITA Concept//EN"/>
-    
-      <output topicType="sidebar"
-              bodyType="body"
-              name="sidebar"
-              doctype-system="sidebar.dtd"
-              doctype-public="urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:sidebar"/>
-    
-      <output topicType="subsection"
-              bodyType="body"
-              name="subsection"
-              doctype-system="subsection.dtd"
-              doctype-public="urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:subsection"/>
     
       <output name="task"
               doctype-system="task.dtd"
@@ -48,7 +41,7 @@
               doctype-system="reference.dtd"
               doctype-public="-//OASIS//DTD DITA Reference//EN"/>
 
-      <paragraphStyle styleName="Title"
+    <paragraphStyle styleName="Title"
                       level="0"
                       structureType="mapTitle"
                       tagName="title">
@@ -59,21 +52,28 @@
                       structureType="topicTitle"
                       tagName="title"
                       level="1">
-         <topicrefProperties topicrefType="chapter"/>
+         <mapProperties rootTopicrefType="topicgroup" format="bookmap" maprefType="mapref"/>
+         <topicrefProperties navtitleType="navtitle" topicrefType="chapter" chunk="to-content"/>
          <topicProperties topicDoc="yes"
                           topicType="concept"
                           bodyType="conbody"
+                          abstractType="abstract"
+                          shortdescType="shortdesc"
+                          prologType="prolog"
+                          initialSectionType="foosection"
                           format="concept"/>
       </paragraphStyle>    
       <paragraphStyle styleName="heading 2"
                       structureType="topicTitle"
+                      containingTopic="currenttopicref"
                       tagName="title"
                       level="2">
          <topicrefProperties topicrefType="topicref"/>
          <topicProperties topicDoc="yes"
                           topicType="concept"
                           bodyType="conbody"
-                          format="concept"/>
+                          format="concept"
+                          outputclass="mytopic"/>
       </paragraphStyle>    
     
     
@@ -97,40 +97,6 @@
                           topicType="concept"
                           bodyType="conbody"
                           format="concept"/>
-      </paragraphStyle>    
-      <paragraphStyle styleName="Sidebar"
-                      structureType="topicTitle"
-                      tagName="title"
-                      level="plusOne"
-                      levelGroup="sidebar">
-         <topicrefProperties topicrefType="topicref"/>
-         <topicProperties topicDoc="yes"
-                          topicType="sidebar"
-                          bodyType="body"
-                          format="sidebar"/>
-      </paragraphStyle>    
-    
-      <paragraphStyle styleName="Subtopic"
-                      structureType="topicTitle"
-                      tagName="title"
-                      level="plusOne"
-                      levelGroup="subtopic-01">
-         <topicrefProperties topicrefType="topicref"/>
-         <topicProperties topicDoc="yes"
-                          topicType="subsection"
-                          bodyType="body"
-                          format="subsection"/>
-      </paragraphStyle>    
-      <paragraphStyle styleName="Subtopic 2"
-                      structureType="topicTitle"
-                      tagName="title"
-                      level="plusOne"
-                      levelGroup="subtopic-02">
-         <topicrefProperties topicrefType="topicref"/>
-         <topicProperties topicDoc="yes"
-                          topicType="subsection"
-                          bodyType="body"
-                          format="subsection"/>
       </paragraphStyle>    
     
       <paragraphStyle styleName="Normal" tagName="p" topicZone="body" level="1"/>
@@ -184,25 +150,10 @@
                       tagName="li"
                       level="1"
                       topicZone="body"/>
-    <paragraphStyle styleName="List Bullet Note"
-      containerType="ul"
-      levelGroup="notebody"
-      tagName="li"
-      level="plusOne"
-      topicZone="body"/>
-    <paragraphStyle
-      styleName="CodeBlock"
-      containerType="codeblock"
-      tagName="ph"
-      
-      
-    >
-    </paragraphStyle>
-    <paragraphStyle styleName="Body Text Indent"
+      <paragraphStyle styleName="Body Text Indent"
                       containerType="li"
                       idGenerator="default"
-                      level="plusOne"
-                      levelGroup="liContent"
+                      level="2"
                       tagName="p"
                       topicZone="body"/>
       <paragraphStyle styleName="Body Text Indent Char"
@@ -269,12 +220,7 @@
                       topicZone="body"
                       spectitle="#toColon"/>
     
-      <paragraphStyle styleName="Note Heading"
-        structureType="block"
-        tagName="note"
-        topicZone="body"
-        level="1"
-      />
+      <characterStyle styleName="bold"  tagName="b"/>
     
   </styles>
 </style2tagmap>
