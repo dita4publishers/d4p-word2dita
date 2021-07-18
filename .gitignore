@@ -12,3 +12,4 @@
 hs_err_pid*
 sample-data/word2dita/all_defaults/dita
 sample-data/word2dita/all_defaults/word/${dita.temp.dir}
+sample-data/word2dita/all_defaults/word/dita/
